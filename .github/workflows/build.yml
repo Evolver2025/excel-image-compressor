@@ -37,16 +37,25 @@ jobs:
       with:
         msbuild-architecture: x64
 
-    - name: Create MSIX Package
-      shell: pwsh
+    - name: Find makeappx.exe
+      id: find_makeappx
       run: |
-        makeappx pack /d .\dist_pyinstaller /p .\EIC.msix
+        $vswhere_path = (Get-Command vswhere.exe).Source
+        $vs_path = & $vswhere_path -latest -property installationPath
+        $makeappx_path = (Get-ChildItem -Path $vs_path -Filter "makeappx.exe" -Recurse | Select-Object -First 1).FullName
+        echo "makeappx_path=$makeappx_path" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+      shell: pwsh
+    
+    - name: Create MSIX Package
+      run: |
+        & $env:makeappx_path pack /d .\dist_pyinstaller /p .\EIC.msix
 
     - name: Upload MSIX Package
       uses: actions/upload-artifact@v4
       with:
         name: msix-package
         path: .\EIC.msix
+
 
 
 
