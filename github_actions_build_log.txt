@@ -1,318 +1,321 @@
-2025-11-21T22:11:50.2433700Z Current runner version: '2.329.0'
-2025-11-21T22:11:50.2657312Z ##[group]Runner Image Provisioner
-2025-11-21T22:11:50.2658039Z Hosted Compute Agent
-2025-11-21T22:11:50.2658621Z Version: 20251016.436
-2025-11-21T22:11:50.2659179Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
-2025-11-21T22:11:50.2659874Z Build Date: 2025-10-15T20:44:12Z
-2025-11-21T22:11:50.2660420Z ##[endgroup]
-2025-11-21T22:11:50.2660938Z ##[group]Operating System
-2025-11-21T22:11:50.2661473Z Microsoft Windows Server 2025
-2025-11-21T22:11:50.2661972Z 10.0.26100
-2025-11-21T22:11:50.2662409Z Datacenter
-2025-11-21T22:11:50.2662797Z ##[endgroup]
-2025-11-21T22:11:50.2663268Z ##[group]Runner Image
-2025-11-21T22:11:50.2663736Z Image: windows-2025
-2025-11-21T22:11:50.2664214Z Version: 20251102.77.1
-2025-11-21T22:11:50.2665170Z Included Software: https://github.com/actions/runner-images/blob/win25/20251102.77/images/windows/Windows2025-Readme.md
-2025-11-21T22:11:50.2666770Z Image Release: https://github.com/actions/runner-images/releases/tag/win25%2F20251102.77
-2025-11-21T22:11:50.2667646Z ##[endgroup]
-2025-11-21T22:11:50.2668684Z ##[group]GITHUB_TOKEN Permissions
-2025-11-21T22:11:50.2670353Z Contents: read
-2025-11-21T22:11:50.2670931Z Metadata: read
-2025-11-21T22:11:50.2671357Z Packages: read
-2025-11-21T22:11:50.2671791Z ##[endgroup]
-2025-11-21T22:11:50.2674170Z Secret source: Actions
-2025-11-21T22:11:50.2674797Z Prepare workflow directory
-2025-11-21T22:11:50.3499844Z Prepare all required actions
-2025-11-21T22:11:50.3537777Z Getting action download info
-2025-11-21T22:11:50.7173609Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
-2025-11-21T22:11:50.8982631Z Download action repository 'actions/setup-python@v3' (SHA:3542bca2639a428e1796aaa6a2ffef0c0f575566)
-2025-11-21T22:11:51.0867862Z Download action repository 'microsoft/setup-msbuild@v1.1' (SHA:34cfbaee7f672c76950673338facd8a73f637506)
-2025-11-21T22:11:51.6081217Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
-2025-11-21T22:11:52.4098962Z Complete job name: build
-2025-11-21T22:11:53.0353844Z ##[group]Run actions/checkout@v3
-2025-11-21T22:11:53.0355289Z with:
-2025-11-21T22:11:53.0356070Z   repository: Evolver2025/excel-image-compressor
-2025-11-21T22:11:53.0357404Z   token: ***
-2025-11-21T22:11:53.0358059Z   ssh-strict: true
-2025-11-21T22:11:53.0358802Z   persist-credentials: true
-2025-11-21T22:11:53.0359595Z   clean: true
-2025-11-21T22:11:53.0360298Z   sparse-checkout-cone-mode: true
-2025-11-21T22:11:53.0361146Z   fetch-depth: 1
-2025-11-21T22:11:53.0361847Z   fetch-tags: false
-2025-11-21T22:11:53.0362541Z   lfs: false
-2025-11-21T22:11:53.0363193Z   submodules: false
-2025-11-21T22:11:53.0363908Z   set-safe-directory: true
-2025-11-21T22:11:53.0364893Z ##[endgroup]
-2025-11-21T22:11:53.2235584Z Syncing repository: Evolver2025/excel-image-compressor
-2025-11-21T22:11:53.2239828Z ##[group]Getting Git version info
-2025-11-21T22:11:53.2242335Z Working directory is 'D:\a\excel-image-compressor\excel-image-compressor'
-2025-11-21T22:11:53.3404656Z [command]"C:\Program Files\Git\bin\git.exe" version
-2025-11-21T22:11:53.7306161Z git version 2.51.2.windows.1
-2025-11-21T22:11:53.7362608Z ##[endgroup]
-2025-11-21T22:11:53.7397419Z Temporarily overriding HOME='D:\a\_temp\ea96b87f-7713-4f63-9158-1d5c4d6b24f6' before making global git config changes
-2025-11-21T22:11:53.7399820Z Adding repository directory to the temporary git global config as a safe directory
-2025-11-21T22:11:53.7402054Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\excel-image-compressor\excel-image-compressor
-2025-11-21T22:11:53.7920564Z Deleting the contents of 'D:\a\excel-image-compressor\excel-image-compressor'
-2025-11-21T22:11:53.7927321Z ##[group]Initializing the repository
-2025-11-21T22:11:53.7935599Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\excel-image-compressor\excel-image-compressor
-2025-11-21T22:11:53.8760016Z Initialized empty Git repository in D:/a/excel-image-compressor/excel-image-compressor/.git/
-2025-11-21T22:11:53.8807539Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Evolver2025/excel-image-compressor
-2025-11-21T22:11:53.9341225Z ##[endgroup]
-2025-11-21T22:11:53.9342517Z ##[group]Disabling automatic garbage collection
-2025-11-21T22:11:53.9347348Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
-2025-11-21T22:11:53.9649494Z ##[endgroup]
-2025-11-21T22:11:53.9650573Z ##[group]Setting up auth
-2025-11-21T22:11:53.9661414Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
-2025-11-21T22:11:53.9989983Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
-2025-11-21T22:11:55.3307557Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2025-11-21T22:11:55.3591207Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
-2025-11-21T22:11:55.8529957Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
-2025-11-21T22:11:55.8825227Z ##[endgroup]
-2025-11-21T22:11:55.8825958Z ##[group]Fetching the repository
-2025-11-21T22:11:55.8838620Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +424c38bd2a3be5b61f99302401cac78b46b0166f:refs/remotes/origin/main
-2025-11-21T22:11:56.7441894Z remote: Enumerating objects: 26, done.        
-2025-11-21T22:11:56.7442544Z remote: Counting objects:   3% (1/26)        
-2025-11-21T22:11:56.7442972Z remote: Counting objects:   7% (2/26)        
-2025-11-21T22:11:56.7443367Z remote: Counting objects:  11% (3/26)        
-2025-11-21T22:11:56.7501261Z remote: Counting objects:  15% (4/26)        
-2025-11-21T22:11:56.7501713Z remote: Counting objects:  19% (5/26)        
-2025-11-21T22:11:56.7502034Z remote: Counting objects:  23% (6/26)        
-2025-11-21T22:11:56.7502323Z remote: Counting objects:  26% (7/26)        
-2025-11-21T22:11:56.7502615Z remote: Counting objects:  30% (8/26)        
-2025-11-21T22:11:56.7502967Z remote: Counting objects:  34% (9/26)        
-2025-11-21T22:11:56.7503222Z remote: Counting objects:  38% (10/26)        
-2025-11-21T22:11:56.7503473Z remote: Counting objects:  42% (11/26)        
-2025-11-21T22:11:56.7503749Z remote: Counting objects:  46% (12/26)        
-2025-11-21T22:11:56.7504270Z remote: Counting objects:  50% (13/26)        
-2025-11-21T22:11:56.7504590Z remote: Counting objects:  53% (14/26)        
-2025-11-21T22:11:56.7504887Z remote: Counting objects:  57% (15/26)        
-2025-11-21T22:11:56.7505165Z remote: Counting objects:  61% (16/26)        
-2025-11-21T22:11:56.7505438Z remote: Counting objects:  65% (17/26)        
-2025-11-21T22:11:56.7505682Z remote: Counting objects:  69% (18/26)        
-2025-11-21T22:11:56.7505928Z remote: Counting objects:  73% (19/26)        
-2025-11-21T22:11:56.7506176Z remote: Counting objects:  76% (20/26)        
-2025-11-21T22:11:56.7506428Z remote: Counting objects:  80% (21/26)        
-2025-11-21T22:11:56.7506667Z remote: Counting objects:  84% (22/26)        
-2025-11-21T22:11:56.7506954Z remote: Counting objects:  88% (23/26)        
-2025-11-21T22:11:56.7507283Z remote: Counting objects:  92% (24/26)        
-2025-11-21T22:11:56.7507538Z remote: Counting objects:  96% (25/26)        
-2025-11-21T22:11:56.7508002Z remote: Counting objects: 100% (26/26)        
-2025-11-21T22:11:56.7508282Z remote: Counting objects: 100% (26/26), done.        
-2025-11-21T22:11:56.7508573Z remote: Compressing objects:   4% (1/24)        
-2025-11-21T22:11:56.7508869Z remote: Compressing objects:   8% (2/24)        
-2025-11-21T22:11:56.7534705Z remote: Compressing objects:  12% (3/24)        
-2025-11-21T22:11:56.7535019Z remote: Compressing objects:  16% (4/24)        
-2025-11-21T22:11:56.7535298Z remote: Compressing objects:  20% (5/24)        
-2025-11-21T22:11:56.7535587Z remote: Compressing objects:  25% (6/24)        
-2025-11-21T22:11:56.7535887Z remote: Compressing objects:  29% (7/24)        
-2025-11-21T22:11:56.7536161Z remote: Compressing objects:  33% (8/24)        
-2025-11-21T22:11:56.7536418Z remote: Compressing objects:  37% (9/24)        
-2025-11-21T22:11:56.7536686Z remote: Compressing objects:  41% (10/24)        
-2025-11-21T22:11:56.7536956Z remote: Compressing objects:  45% (11/24)        
-2025-11-21T22:11:56.7537219Z remote: Compressing objects:  50% (12/24)        
-2025-11-21T22:11:56.7537484Z remote: Compressing objects:  54% (13/24)        
-2025-11-21T22:11:56.7537739Z remote: Compressing objects:  58% (14/24)        
-2025-11-21T22:11:56.7538011Z remote: Compressing objects:  62% (15/24)        
-2025-11-21T22:11:56.7538274Z remote: Compressing objects:  66% (16/24)        
-2025-11-21T22:11:56.7538537Z remote: Compressing objects:  70% (17/24)        
-2025-11-21T22:11:56.7538801Z remote: Compressing objects:  75% (18/24)        
-2025-11-21T22:11:56.7539059Z remote: Compressing objects:  79% (19/24)        
-2025-11-21T22:11:56.7539321Z remote: Compressing objects:  83% (20/24)        
-2025-11-21T22:11:56.7539586Z remote: Compressing objects:  87% (21/24)        
-2025-11-21T22:11:56.7539846Z remote: Compressing objects:  91% (22/24)        
-2025-11-21T22:11:56.7540105Z remote: Compressing objects:  95% (23/24)        
-2025-11-21T22:11:56.7540369Z remote: Compressing objects: 100% (24/24)        
-2025-11-21T22:11:56.7540656Z remote: Compressing objects: 100% (24/24), done.        
-2025-11-21T22:11:56.8597583Z remote: Total 26 (delta 0), reused 22 (delta 0), pack-reused 0 (from 0)        
-2025-11-21T22:11:56.9480052Z From https://github.com/Evolver2025/excel-image-compressor
-2025-11-21T22:11:56.9502302Z  * [new ref]         424c38bd2a3be5b61f99302401cac78b46b0166f -> origin/main
-2025-11-21T22:11:56.9845537Z ##[endgroup]
-2025-11-21T22:11:56.9846258Z ##[group]Determining the checkout info
-2025-11-21T22:11:56.9849389Z ##[endgroup]
-2025-11-21T22:11:56.9860969Z ##[group]Checking out the ref
-2025-11-21T22:11:56.9861422Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
-2025-11-21T22:11:57.0594256Z branch 'main' set up to track 'origin/main'.
-2025-11-21T22:11:57.0603305Z Switched to a new branch 'main'
-2025-11-21T22:11:57.0638583Z ##[endgroup]
-2025-11-21T22:11:57.1053621Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format='%H'
-2025-11-21T22:11:57.1309446Z '424c38bd2a3be5b61f99302401cac78b46b0166f'
-2025-11-21T22:11:57.4303433Z ##[group]Run actions/setup-python@v3
-2025-11-21T22:11:57.4303768Z with:
-2025-11-21T22:11:57.4303955Z   python-version: 3.10
-2025-11-21T22:11:57.4304366Z   token: ***
-2025-11-21T22:11:57.4304550Z ##[endgroup]
-2025-11-21T22:11:57.6392693Z Successfully setup CPython (3.10.11)
-2025-11-21T22:11:57.8456161Z ##[group]Run python -m pip install --upgrade pip
-2025-11-21T22:11:57.8456609Z [36;1mpython -m pip install --upgrade pip[0m
-2025-11-21T22:11:57.8456930Z [36;1mpip install pyinstaller[0m
-2025-11-21T22:11:57.9536869Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
-2025-11-21T22:11:57.9537213Z env:
-2025-11-21T22:11:57.9537472Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
-2025-11-21T22:11:57.9537803Z ##[endgroup]
-2025-11-21T22:12:05.7715875Z Requirement already satisfied: pip in c:\hostedtoolcache\windows\python\3.10.11\x64\lib\site-packages (25.3)
-2025-11-21T22:12:07.2801569Z Collecting pyinstaller
-2025-11-21T22:12:07.3480471Z   Downloading pyinstaller-6.16.0-py3-none-win_amd64.whl.metadata (8.5 kB)
-2025-11-21T22:12:07.4101168Z Collecting altgraph (from pyinstaller)
-2025-11-21T22:12:07.4254608Z   Downloading altgraph-0.17.5-py2.py3-none-any.whl.metadata (7.5 kB)
-2025-11-21T22:12:07.4987681Z Collecting packaging>=22.0 (from pyinstaller)
-2025-11-21T22:12:07.5143246Z   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
-2025-11-21T22:12:07.5642480Z Collecting pefile!=2024.8.26,>=2022.5.30 (from pyinstaller)
-2025-11-21T22:12:07.5910558Z   Downloading pefile-2023.2.7-py3-none-any.whl.metadata (1.4 kB)
-2025-11-21T22:12:07.6503293Z Collecting pyinstaller-hooks-contrib>=2025.8 (from pyinstaller)
-2025-11-21T22:12:07.6662578Z   Downloading pyinstaller_hooks_contrib-2025.9-py3-none-any.whl.metadata (16 kB)
-2025-11-21T22:12:07.7208477Z Collecting pywin32-ctypes>=0.2.1 (from pyinstaller)
-2025-11-21T22:12:07.7370015Z   Downloading pywin32_ctypes-0.2.3-py3-none-any.whl.metadata (3.9 kB)
-2025-11-21T22:12:07.7553524Z Requirement already satisfied: setuptools>=42.0.0 in c:\hostedtoolcache\windows\python\3.10.11\x64\lib\site-packages (from pyinstaller) (65.5.0)
-2025-11-21T22:12:07.7841570Z Downloading pyinstaller-6.16.0-py3-none-win_amd64.whl (1.4 MB)
-2025-11-21T22:12:07.8641918Z    ---------------------------------------- 1.4/1.4 MB 23.7 MB/s  0:00:00
-2025-11-21T22:12:07.8787775Z Downloading packaging-25.0-py3-none-any.whl (66 kB)
-2025-11-21T22:12:07.9092066Z Downloading pefile-2023.2.7-py3-none-any.whl (71 kB)
-2025-11-21T22:12:07.9449590Z Downloading pyinstaller_hooks_contrib-2025.9-py3-none-any.whl (444 kB)
-2025-11-21T22:12:07.9773189Z Downloading pywin32_ctypes-0.2.3-py3-none-any.whl (30 kB)
-2025-11-21T22:12:08.0067893Z Downloading altgraph-0.17.5-py2.py3-none-any.whl (21 kB)
-2025-11-21T22:12:08.0894829Z Installing collected packages: altgraph, pywin32-ctypes, pefile, packaging, pyinstaller-hooks-contrib, pyinstaller
-2025-11-21T22:12:11.9143591Z 
-2025-11-21T22:12:11.9185330Z Successfully installed altgraph-0.17.5 packaging-25.0 pefile-2023.2.7 pyinstaller-6.16.0 pyinstaller-hooks-contrib-2025.9 pywin32-ctypes-0.2.3
-2025-11-21T22:12:12.5653850Z ##[group]Run pyinstaller --name "EIC_Installer_Source" --onefile --windowed --icon="logo.ico" --distpath ./dist_pyinstaller gui_app/main.py
-2025-11-21T22:12:12.5654781Z [36;1mpyinstaller --name "EIC_Installer_Source" --onefile --windowed --icon="logo.ico" --distpath ./dist_pyinstaller gui_app/main.py[0m
-2025-11-21T22:12:12.5714681Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
-2025-11-21T22:12:12.5714995Z env:
-2025-11-21T22:12:12.5715228Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
-2025-11-21T22:12:12.5715519Z ##[endgroup]
-2025-11-21T22:12:13.1221386Z 158 INFO: PyInstaller: 6.16.0, contrib hooks: 2025.9
-2025-11-21T22:12:13.1221913Z 158 INFO: Python: 3.10.11
-2025-11-21T22:12:13.1302431Z 166 INFO: Platform: Windows-10-10.0.26100-SP0
-2025-11-21T22:12:13.1302949Z 166 INFO: Python environment: C:\hostedtoolcache\windows\Python\3.10.11\x64
-2025-11-21T22:12:13.1309250Z 168 INFO: wrote D:\a\excel-image-compressor\excel-image-compressor\EIC_Installer_Source.spec
-2025-11-21T22:12:13.1342262Z 170 INFO: Module search paths (PYTHONPATH):
-2025-11-21T22:12:13.1342931Z ['C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\Scripts\\pyinstaller.exe',
-2025-11-21T22:12:13.1343690Z  'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\python310.zip',
-2025-11-21T22:12:13.1344310Z  'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\DLLs',
-2025-11-21T22:12:13.1344879Z  'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib',
-2025-11-21T22:12:13.1345398Z  'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64',
-2025-11-21T22:12:13.1346025Z  'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages',
-2025-11-21T22:12:13.1347102Z  'D:\\a\\excel-image-compressor\\excel-image-compressor\\gui_app']
-2025-11-21T22:12:13.3346701Z 371 INFO: checking Analysis
-2025-11-21T22:12:13.3347607Z 372 INFO: Building Analysis because Analysis-00.toc is non existent
-2025-11-21T22:12:13.3348536Z 372 INFO: Looking for Python shared library...
-2025-11-21T22:12:13.3349458Z 372 INFO: Using Python shared library: C:\hostedtoolcache\windows\Python\3.10.11\x64\python310.dll
-2025-11-21T22:12:13.3350744Z 372 INFO: Running Analysis Analysis-00.toc
-2025-11-21T22:12:13.3351457Z 372 INFO: Target bytecode optimization level: 0
-2025-11-21T22:12:13.3352157Z 372 INFO: Initializing module dependency graph...
-2025-11-21T22:12:13.3387877Z 376 INFO: Initializing module graph hook caches...
-2025-11-21T22:12:13.3564645Z 392 INFO: Analyzing modules for base_library.zip ...
-2025-11-21T22:12:13.8823358Z 919 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
-2025-11-21T22:12:13.9745289Z 1011 INFO: Processing standard module hook 'hook-encodings.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
-2025-11-21T22:12:15.2064749Z 2242 INFO: Processing standard module hook 'hook-pickle.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
-2025-11-21T22:12:16.4476625Z 3484 INFO: Caching module dependency graph...
-2025-11-21T22:12:16.4854683Z 3521 INFO: Analyzing D:\a\excel-image-compressor\excel-image-compressor\gui_app\main.py
-2025-11-21T22:12:16.4885176Z 3525 INFO: Processing pre-find-module-path hook 'hook-tkinter.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
-2025-11-21T22:12:16.4888499Z 3525 INFO: TclTkInfo: initializing cached Tcl/Tk info...
-2025-11-21T22:12:17.3625173Z 4399 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
-2025-11-21T22:12:17.4317135Z 4467 INFO: Processing standard module hook 'hook-platform.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
-2025-11-21T22:12:17.4349481Z 4471 INFO: Processing module hooks (post-graph stage)...
-2025-11-21T22:12:17.4396060Z 4476 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
-2025-11-21T22:12:17.4514558Z 4488 INFO: Performing binary vs. data reclassification (923 entries)
-2025-11-21T22:12:18.1495660Z 5185 INFO: Looking for ctypes DLLs
-2025-11-21T22:12:18.1519097Z 5189 INFO: Analyzing run-time hooks ...
-2025-11-21T22:12:18.1530046Z 5189 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
-2025-11-21T22:12:18.1550699Z 5191 INFO: Including run-time hook 'pyi_rth__tkinter.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
-2025-11-21T22:12:18.1850225Z 5221 INFO: Creating base_library.zip...
-2025-11-21T22:12:18.2022224Z 5239 INFO: Looking for dynamic libraries
-2025-11-21T22:12:18.3034839Z 5340 INFO: Extra DLL search directories (AddDllDirectory): []
-2025-11-21T22:12:18.3035236Z 5340 INFO: Extra DLL search directories (PATH): []
-2025-11-21T22:12:18.9641822Z 6001 INFO: Warnings written to D:\a\excel-image-compressor\excel-image-compressor\build\EIC_Installer_Source\warn-EIC_Installer_Source.txt
-2025-11-21T22:12:18.9837190Z 6020 INFO: Graph cross-reference written to D:\a\excel-image-compressor\excel-image-compressor\build\EIC_Installer_Source\xref-EIC_Installer_Source.html
-2025-11-21T22:12:19.0188051Z 6056 INFO: checking PYZ
-2025-11-21T22:12:19.0188496Z 6056 INFO: Building PYZ because PYZ-00.toc is non existent
-2025-11-21T22:12:19.0189406Z 6056 INFO: Building PYZ (ZlibArchive) D:\a\excel-image-compressor\excel-image-compressor\build\EIC_Installer_Source\PYZ-00.pyz
-2025-11-21T22:12:19.1393951Z 6175 INFO: Building PYZ (ZlibArchive) D:\a\excel-image-compressor\excel-image-compressor\build\EIC_Installer_Source\PYZ-00.pyz completed successfully.
-2025-11-21T22:12:19.1735113Z 6211 INFO: checking PKG
-2025-11-21T22:12:19.1736900Z 6211 INFO: Building PKG because PKG-00.toc is non existent
-2025-11-21T22:12:19.1738466Z 6211 INFO: Building PKG (CArchive) EIC_Installer_Source.pkg
-2025-11-21T22:12:22.3618383Z 9398 INFO: Building PKG (CArchive) EIC_Installer_Source.pkg completed successfully.
-2025-11-21T22:12:22.3837961Z 9420 INFO: Bootloader C:\hostedtoolcache\windows\Python\3.10.11\x64\lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
-2025-11-21T22:12:22.3838632Z 9420 INFO: checking EXE
-2025-11-21T22:12:22.3839278Z 9420 INFO: Building EXE because EXE-00.toc is non existent
-2025-11-21T22:12:22.3839750Z 9420 INFO: Building EXE from EXE-00.toc
-2025-11-21T22:12:22.3842660Z 9420 INFO: Copying bootloader EXE to D:\a\excel-image-compressor\excel-image-compressor\dist_pyinstaller\EIC_Installer_Source.exe
-2025-11-21T22:12:22.3863980Z 9424 INFO: Copying icon to EXE
-2025-11-21T22:12:22.3881666Z 9424 INFO: Copying 0 resources to EXE
-2025-11-21T22:12:22.3882083Z 9424 INFO: Embedding manifest in EXE
-2025-11-21T22:12:22.3898261Z 9426 INFO: Appending PKG archive to EXE
-2025-11-21T22:12:22.3951216Z 9432 INFO: Fixing EXE headers
-2025-11-21T22:12:22.4945929Z 9531 INFO: Building EXE from EXE-00.toc completed successfully.
-2025-11-21T22:12:22.5170608Z 9554 INFO: Build complete! The results are available in: D:\a\excel-image-compressor\excel-image-compressor\dist_pyinstaller
-2025-11-21T22:12:22.6742241Z ##[group]Run Copy-Item -Path .\appxmanifest.xml -Destination .\dist_pyinstaller\appxmanifest.xml
-2025-11-21T22:12:22.6742928Z [36;1mCopy-Item -Path .\appxmanifest.xml -Destination .\dist_pyinstaller\appxmanifest.xml[0m
-2025-11-21T22:12:22.6743436Z [36;1mCopy-Item -Path .\msix_assets -Destination .\dist_pyinstaller -Recurse[0m
-2025-11-21T22:12:22.6805039Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
-2025-11-21T22:12:22.6805346Z env:
-2025-11-21T22:12:22.6805588Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
-2025-11-21T22:12:22.6805876Z ##[endgroup]
-2025-11-21T22:12:23.0645785Z ##[group]Run microsoft/setup-msbuild@v1.1
-2025-11-21T22:12:23.0646106Z with:
-2025-11-21T22:12:23.0646288Z   msbuild-architecture: x64
-2025-11-21T22:12:23.0646510Z env:
-2025-11-21T22:12:23.0646784Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
-2025-11-21T22:12:23.0647082Z ##[endgroup]
-2025-11-21T22:12:23.2135118Z [command]C:\ProgramData\Chocolatey\bin\vswhere.exe -products * -requires Microsoft.Component.MSBuild -property installationPath -latest
-2025-11-21T22:12:23.6217677Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise
-2025-11-21T22:12:23.6486773Z ##[group]Run $sdk_bin_root = "C:\Program Files (x86)\Windows Kits\10\bin"
-2025-11-21T22:12:23.6487550Z [36;1m$sdk_bin_root = "C:\Program Files (x86)\Windows Kits\10\bin"[0m
-2025-11-21T22:12:23.6488756Z [36;1m$latest_sdk_version_dir = Get-ChildItem -Path $sdk_bin_root -Directory | Where-Object { $_.Name -match '^\d+\.\d+\.\d+\.\d+$' } | Sort-Object {[version]$_.Name} -Descending | Select-Object -First 1[0m
-2025-11-21T22:12:23.6490204Z [36;1mif (-not $latest_sdk_version_dir) {[0m
-2025-11-21T22:12:23.6490853Z [36;1m    Write-Error "Could not find a Windows 10 SDK version directory in $sdk_bin_root"[0m
-2025-11-21T22:12:23.6491466Z [36;1m    exit 1[0m
-2025-11-21T22:12:23.6491741Z [36;1m}[0m
-2025-11-21T22:12:23.6492411Z [36;1mecho "sdk_version_dir=$($latest_sdk_version_dir.FullName)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append[0m
-2025-11-21T22:12:23.6493437Z [36;1m$makeappx_path = Join-Path $latest_sdk_version_dir.FullName "x64\makeappx.exe"[0m
-2025-11-21T22:12:23.6494138Z [36;1mif (-not (Test-Path $makeappx_path)) {[0m
-2025-11-21T22:12:23.6494760Z [36;1m    Write-Error "makeappx.exe not found at expected path: $makeappx_path"[0m
-2025-11-21T22:12:23.6495334Z [36;1m    exit 1[0m
-2025-11-21T22:12:23.6495605Z [36;1m}[0m
-2025-11-21T22:12:23.6495976Z [36;1mWrite-Host "Found makeappx.exe at: $makeappx_path"[0m
-2025-11-21T22:12:23.6496783Z [36;1mecho "makeappx_path=$makeappx_path" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append[0m
-2025-11-21T22:12:23.6783078Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
-2025-11-21T22:12:23.6783572Z env:
-2025-11-21T22:12:23.6783820Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
-2025-11-21T22:12:23.6784105Z ##[endgroup]
-2025-11-21T22:12:24.3694105Z Found makeappx.exe at: C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\makeappx.exe
-2025-11-21T22:12:24.4456036Z ##[group]Run $makeappx_path = Get-ChildItem -Path "C:\Program Files (x86)\Windows Kits\10\bin" -Filter "makeappx.exe" -Recurse | Select-Object -ExpandProperty FullName -First 1
-2025-11-21T22:12:24.4457164Z [36;1m$makeappx_path = Get-ChildItem -Path "C:\Program Files (x86)\Windows Kits\10\bin" -Filter "makeappx.exe" -Recurse | Select-Object -ExpandProperty FullName -First 1[0m
-2025-11-21T22:12:24.4457771Z [36;1mif ($makeappx_path) {[0m
-2025-11-21T22:12:24.4458090Z [36;1m  & $makeappx_path pack /d .\dist\EIC_Installer_Source /p .\EIC.msix[0m
-2025-11-21T22:12:24.4458398Z [36;1m} else {[0m
-2025-11-21T22:12:24.4458603Z [36;1m  Write-Error "makeappx.exe not found!"[0m
-2025-11-21T22:12:24.4458852Z [36;1m  exit 1[0m
-2025-11-21T22:12:24.4459006Z [36;1m}[0m
-2025-11-21T22:12:24.4519882Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
-2025-11-21T22:12:24.4520183Z env:
-2025-11-21T22:12:24.4520471Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
-2025-11-21T22:12:24.4520870Z   sdk_version_dir: C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0
-2025-11-21T22:12:24.4521301Z   makeappx_path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\makeappx.exe
-2025-11-21T22:12:24.4521640Z ##[endgroup]
-2025-11-21T22:12:25.2006457Z [31;1mResourceUnavailable: [0mD:\a\_temp\5f19a802-8078-474f-850f-77d98c97e49a.ps1:4[0m
-2025-11-21T22:12:25.2007213Z [31;1m[0m[36;1mLine |[0m
-2025-11-21T22:12:25.2007984Z [31;1m[0m[36;1m[36;1m   4 | [0m   [36;1m& $makeappx_path pack /d .\dist\EIC_Installer_Source /p .\EIC.msix[0m
-2025-11-21T22:12:25.2008899Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
-2025-11-21T22:12:25.2010052Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mProgram 'makeappx.exe' failed to run: An error occurred trying to start process 'C:\Program Files (x86)\Windows[0m
-2025-11-21T22:12:25.2010952Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m[31;1m[36;1m     | [31;1mKits\10\bin\10.0.26100.0\arm64\makeappx.exe' with working directory[0m
-2025-11-21T22:12:25.2011894Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m[31;1m[36;1m[31;1m[36;1m     | [31;1m'D:\a\excel-image-compressor\excel-image-compressor'. The specified executable is not a valid application for[0m
-2025-11-21T22:12:25.2013024Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m[31;1m[36;1m[31;1m[36;1m[31;1m[36;1m     | [31;1mthis OS platform.At D:\a\_temp\5f19a802-8078-474f-850f-77d98c97e49a.ps1:4 char:3 +   & $makeappx_path pack /d[0m
-2025-11-21T22:12:25.2014092Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m[31;1m[36;1m[31;1m[36;1m[31;1m[36;1m[31;1m[36;1m     | [31;1m.\dist\EIC_Installer_Source /p .\EIC.msix +   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.[0m
-2025-11-21T22:12:25.2534754Z ##[error]Process completed with exit code 1.
-2025-11-21T22:12:25.2737574Z Post job cleanup.
-2025-11-21T22:12:25.4732218Z [command]"C:\Program Files\Git\bin\git.exe" version
-2025-11-21T22:12:25.4993745Z git version 2.51.2.windows.1
-2025-11-21T22:12:25.5069504Z Temporarily overriding HOME='D:\a\_temp\1d9ca188-326f-4ace-a7e3-59f663ff80da' before making global git config changes
-2025-11-21T22:12:25.5070743Z Adding repository directory to the temporary git global config as a safe directory
-2025-11-21T22:12:25.5077780Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\excel-image-compressor\excel-image-compressor
-2025-11-21T22:12:25.5368013Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
-2025-11-21T22:12:25.5653427Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
-2025-11-21T22:12:26.0970626Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-2025-11-21T22:12:26.1219911Z http.https://github.com/.extraheader
-2025-11-21T22:12:26.1263309Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
-2025-11-21T22:12:26.1549163Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
-2025-11-21T22:12:26.6841485Z Cleaning up orphan processes
+2025-11-21T22:15:35.4996458Z Current runner version: '2.329.0'
+2025-11-21T22:15:35.5020266Z ##[group]Runner Image Provisioner
+2025-11-21T22:15:35.5021555Z Hosted Compute Agent
+2025-11-21T22:15:35.5022069Z Version: 20251016.436
+2025-11-21T22:15:35.5022634Z Commit: 8ab8ac8bfd662a3739dab9fe09456aba92132568
+2025-11-21T22:15:35.5023257Z Build Date: 2025-10-15T20:44:12Z
+2025-11-21T22:15:35.5023822Z ##[endgroup]
+2025-11-21T22:15:35.5024281Z ##[group]Operating System
+2025-11-21T22:15:35.5024797Z Microsoft Windows Server 2025
+2025-11-21T22:15:35.5025309Z 10.0.26100
+2025-11-21T22:15:35.5025707Z Datacenter
+2025-11-21T22:15:35.5026128Z ##[endgroup]
+2025-11-21T22:15:35.5026527Z ##[group]Runner Image
+2025-11-21T22:15:35.5027001Z Image: windows-2025
+2025-11-21T22:15:35.5027419Z Version: 20251102.77.1
+2025-11-21T22:15:35.5028368Z Included Software: https://github.com/actions/runner-images/blob/win25/20251102.77/images/windows/Windows2025-Readme.md
+2025-11-21T22:15:35.5029986Z Image Release: https://github.com/actions/runner-images/releases/tag/win25%2F20251102.77
+2025-11-21T22:15:35.5030880Z ##[endgroup]
+2025-11-21T22:15:35.5031989Z ##[group]GITHUB_TOKEN Permissions
+2025-11-21T22:15:35.5033735Z Contents: read
+2025-11-21T22:15:35.5034234Z Metadata: read
+2025-11-21T22:15:35.5034695Z Packages: read
+2025-11-21T22:15:35.5035199Z ##[endgroup]
+2025-11-21T22:15:35.5037149Z Secret source: Actions
+2025-11-21T22:15:35.5037805Z Prepare workflow directory
+2025-11-21T22:15:35.5381061Z Prepare all required actions
+2025-11-21T22:15:35.5433568Z Getting action download info
+2025-11-21T22:15:36.0053863Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-11-21T22:15:36.1469270Z Download action repository 'actions/setup-python@v3' (SHA:3542bca2639a428e1796aaa6a2ffef0c0f575566)
+2025-11-21T22:15:36.2988705Z Download action repository 'microsoft/setup-msbuild@v1.1' (SHA:34cfbaee7f672c76950673338facd8a73f637506)
+2025-11-21T22:15:36.8933123Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-11-21T22:15:37.2751151Z Complete job name: build
+2025-11-21T22:15:37.5091976Z ##[group]Run actions/checkout@v3
+2025-11-21T22:15:37.5093289Z with:
+2025-11-21T22:15:37.5094056Z   repository: Evolver2025/excel-image-compressor
+2025-11-21T22:15:37.5095290Z   token: ***
+2025-11-21T22:15:37.5095946Z   ssh-strict: true
+2025-11-21T22:15:37.5096673Z   persist-credentials: true
+2025-11-21T22:15:37.5097470Z   clean: true
+2025-11-21T22:15:37.5098183Z   sparse-checkout-cone-mode: true
+2025-11-21T22:15:37.5099039Z   fetch-depth: 1
+2025-11-21T22:15:37.5099734Z   fetch-tags: false
+2025-11-21T22:15:37.5100421Z   lfs: false
+2025-11-21T22:15:37.5101063Z   submodules: false
+2025-11-21T22:15:37.5101783Z   set-safe-directory: true
+2025-11-21T22:15:37.5102741Z ##[endgroup]
+2025-11-21T22:15:37.6717209Z Syncing repository: Evolver2025/excel-image-compressor
+2025-11-21T22:15:37.6719734Z ##[group]Getting Git version info
+2025-11-21T22:15:37.6721361Z Working directory is 'D:\a\excel-image-compressor\excel-image-compressor'
+2025-11-21T22:15:37.7620726Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-11-21T22:15:38.8645451Z git version 2.51.2.windows.1
+2025-11-21T22:15:38.8704259Z ##[endgroup]
+2025-11-21T22:15:38.8727997Z Temporarily overriding HOME='D:\a\_temp\d5307f7a-c62a-4d37-92b3-666c73f17944' before making global git config changes
+2025-11-21T22:15:38.8729174Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-21T22:15:38.8736470Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\excel-image-compressor\excel-image-compressor
+2025-11-21T22:15:39.0071470Z Deleting the contents of 'D:\a\excel-image-compressor\excel-image-compressor'
+2025-11-21T22:15:39.0078120Z ##[group]Initializing the repository
+2025-11-21T22:15:39.0086421Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\excel-image-compressor\excel-image-compressor
+2025-11-21T22:15:39.1801923Z Initialized empty Git repository in D:/a/excel-image-compressor/excel-image-compressor/.git/
+2025-11-21T22:15:39.1853996Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/Evolver2025/excel-image-compressor
+2025-11-21T22:15:39.3360527Z ##[endgroup]
+2025-11-21T22:15:39.3361054Z ##[group]Disabling automatic garbage collection
+2025-11-21T22:15:39.3367877Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-11-21T22:15:39.3655181Z ##[endgroup]
+2025-11-21T22:15:39.3655617Z ##[group]Setting up auth
+2025-11-21T22:15:39.3665649Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-11-21T22:15:39.3953016Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-11-21T22:15:42.3425144Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-21T22:15:42.3744471Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-11-21T22:15:42.9016528Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-11-21T22:15:42.9326452Z ##[endgroup]
+2025-11-21T22:15:42.9327592Z ##[group]Fetching the repository
+2025-11-21T22:15:42.9341450Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +03efe43aead48129e198759fb256b5e25fc71565:refs/remotes/origin/main
+2025-11-21T22:15:44.3666109Z remote: Enumerating objects: 26, done.        
+2025-11-21T22:15:44.3667440Z remote: Counting objects:   3% (1/26)        
+2025-11-21T22:15:44.3668130Z remote: Counting objects:   7% (2/26)        
+2025-11-21T22:15:44.3668696Z remote: Counting objects:  11% (3/26)        
+2025-11-21T22:15:44.3671317Z remote: Counting objects:  15% (4/26)        
+2025-11-21T22:15:44.3671696Z remote: Counting objects:  19% (5/26)        
+2025-11-21T22:15:44.3671997Z remote: Counting objects:  23% (6/26)        
+2025-11-21T22:15:44.3672288Z remote: Counting objects:  26% (7/26)        
+2025-11-21T22:15:44.3672775Z remote: Counting objects:  30% (8/26)        
+2025-11-21T22:15:44.3673164Z remote: Counting objects:  34% (9/26)        
+2025-11-21T22:15:44.3673433Z remote: Counting objects:  38% (10/26)        
+2025-11-21T22:15:44.3673705Z remote: Counting objects:  42% (11/26)        
+2025-11-21T22:15:44.3673960Z remote: Counting objects:  46% (12/26)        
+2025-11-21T22:15:44.3674221Z remote: Counting objects:  50% (13/26)        
+2025-11-21T22:15:44.3674517Z remote: Counting objects:  53% (14/26)        
+2025-11-21T22:15:44.3674810Z remote: Counting objects:  57% (15/26)        
+2025-11-21T22:15:44.3675086Z remote: Counting objects:  61% (16/26)        
+2025-11-21T22:15:44.3675338Z remote: Counting objects:  65% (17/26)        
+2025-11-21T22:15:44.3675589Z remote: Counting objects:  69% (18/26)        
+2025-11-21T22:15:44.3675838Z remote: Counting objects:  73% (19/26)        
+2025-11-21T22:15:44.3676098Z remote: Counting objects:  76% (20/26)        
+2025-11-21T22:15:44.3676341Z remote: Counting objects:  80% (21/26)        
+2025-11-21T22:15:44.3676588Z remote: Counting objects:  84% (22/26)        
+2025-11-21T22:15:44.3676848Z remote: Counting objects:  88% (23/26)        
+2025-11-21T22:15:44.3677133Z remote: Counting objects:  92% (24/26)        
+2025-11-21T22:15:44.3677378Z remote: Counting objects:  96% (25/26)        
+2025-11-21T22:15:44.3677616Z remote: Counting objects: 100% (26/26)        
+2025-11-21T22:15:44.3677886Z remote: Counting objects: 100% (26/26), done.        
+2025-11-21T22:15:44.3678167Z remote: Compressing objects:   4% (1/24)        
+2025-11-21T22:15:44.3678444Z remote: Compressing objects:   8% (2/24)        
+2025-11-21T22:15:44.3679487Z remote: Compressing objects:  12% (3/24)        
+2025-11-21T22:15:44.3679769Z remote: Compressing objects:  16% (4/24)        
+2025-11-21T22:15:44.3680025Z remote: Compressing objects:  20% (5/24)        
+2025-11-21T22:15:44.3680290Z remote: Compressing objects:  25% (6/24)        
+2025-11-21T22:15:44.3680575Z remote: Compressing objects:  29% (7/24)        
+2025-11-21T22:15:44.3680823Z remote: Compressing objects:  33% (8/24)        
+2025-11-21T22:15:44.3681128Z remote: Compressing objects:  37% (9/24)        
+2025-11-21T22:15:44.3681607Z remote: Compressing objects:  41% (10/24)        
+2025-11-21T22:15:44.3682085Z remote: Compressing objects:  45% (11/24)        
+2025-11-21T22:15:44.3682562Z remote: Compressing objects:  50% (12/24)        
+2025-11-21T22:15:44.3683027Z remote: Compressing objects:  54% (13/24)        
+2025-11-21T22:15:44.3683500Z remote: Compressing objects:  58% (14/24)        
+2025-11-21T22:15:44.3683980Z remote: Compressing objects:  62% (15/24)        
+2025-11-21T22:15:44.3684808Z remote: Compressing objects:  66% (16/24)        
+2025-11-21T22:15:44.3685346Z remote: Compressing objects:  70% (17/24)        
+2025-11-21T22:15:44.3685764Z remote: Compressing objects:  75% (18/24)        
+2025-11-21T22:15:44.3686229Z remote: Compressing objects:  79% (19/24)        
+2025-11-21T22:15:44.3686680Z remote: Compressing objects:  83% (20/24)        
+2025-11-21T22:15:44.3687161Z remote: Compressing objects:  87% (21/24)        
+2025-11-21T22:15:44.3687608Z remote: Compressing objects:  91% (22/24)        
+2025-11-21T22:15:44.3688070Z remote: Compressing objects:  95% (23/24)        
+2025-11-21T22:15:44.3688523Z remote: Compressing objects: 100% (24/24)        
+2025-11-21T22:15:44.3689065Z remote: Compressing objects: 100% (24/24), done.        
+2025-11-21T22:15:44.4509501Z remote: Total 26 (delta 0), reused 22 (delta 0), pack-reused 0 (from 0)        
+2025-11-21T22:15:44.4838137Z From https://github.com/Evolver2025/excel-image-compressor
+2025-11-21T22:15:44.4840162Z  * [new ref]         03efe43aead48129e198759fb256b5e25fc71565 -> origin/main
+2025-11-21T22:15:44.5031416Z ##[endgroup]
+2025-11-21T22:15:44.5031795Z ##[group]Determining the checkout info
+2025-11-21T22:15:44.5034324Z ##[endgroup]
+2025-11-21T22:15:44.5035342Z ##[group]Checking out the ref
+2025-11-21T22:15:44.5042841Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B main refs/remotes/origin/main
+2025-11-21T22:15:44.5555825Z branch 'main' set up to track 'origin/main'.
+2025-11-21T22:15:44.5564262Z Switched to a new branch 'main'
+2025-11-21T22:15:44.5926223Z ##[endgroup]
+2025-11-21T22:15:44.5939151Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format='%H'
+2025-11-21T22:15:44.6320359Z '03efe43aead48129e198759fb256b5e25fc71565'
+2025-11-21T22:15:44.6775017Z ##[group]Run actions/setup-python@v3
+2025-11-21T22:15:44.6775333Z with:
+2025-11-21T22:15:44.6775510Z   python-version: 3.10
+2025-11-21T22:15:44.6775858Z   token: ***
+2025-11-21T22:15:44.6776015Z ##[endgroup]
+2025-11-21T22:15:44.8382544Z Successfully setup CPython (3.10.11)
+2025-11-21T22:15:44.8624661Z ##[group]Run python -m pip install --upgrade pip
+2025-11-21T22:15:44.8625099Z [36;1mpython -m pip install --upgrade pip[0m
+2025-11-21T22:15:44.8625372Z [36;1mpip install pyinstaller[0m
+2025-11-21T22:15:44.9028697Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-11-21T22:15:44.9029026Z env:
+2025-11-21T22:15:44.9029284Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-11-21T22:15:44.9029590Z ##[endgroup]
+2025-11-21T22:16:04.1188561Z Requirement already satisfied: pip in c:\hostedtoolcache\windows\python\3.10.11\x64\lib\site-packages (25.3)
+2025-11-21T22:16:05.9082852Z Collecting pyinstaller
+2025-11-21T22:16:05.9534257Z   Downloading pyinstaller-6.16.0-py3-none-win_amd64.whl.metadata (8.5 kB)
+2025-11-21T22:16:06.0298602Z Collecting altgraph (from pyinstaller)
+2025-11-21T22:16:06.0353972Z   Downloading altgraph-0.17.5-py2.py3-none-any.whl.metadata (7.5 kB)
+2025-11-21T22:16:06.1410567Z Collecting packaging>=22.0 (from pyinstaller)
+2025-11-21T22:16:06.1455206Z   Downloading packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+2025-11-21T22:16:06.2599956Z Collecting pefile!=2024.8.26,>=2022.5.30 (from pyinstaller)
+2025-11-21T22:16:06.2760345Z   Downloading pefile-2023.2.7-py3-none-any.whl.metadata (1.4 kB)
+2025-11-21T22:16:06.3660896Z Collecting pyinstaller-hooks-contrib>=2025.8 (from pyinstaller)
+2025-11-21T22:16:06.3785889Z   Downloading pyinstaller_hooks_contrib-2025.9-py3-none-any.whl.metadata (16 kB)
+2025-11-21T22:16:06.4487214Z Collecting pywin32-ctypes>=0.2.1 (from pyinstaller)
+2025-11-21T22:16:06.4541713Z   Downloading pywin32_ctypes-0.2.3-py3-none-any.whl.metadata (3.9 kB)
+2025-11-21T22:16:06.4802382Z Requirement already satisfied: setuptools>=42.0.0 in c:\hostedtoolcache\windows\python\3.10.11\x64\lib\site-packages (from pyinstaller) (65.5.0)
+2025-11-21T22:16:06.5004977Z Downloading pyinstaller-6.16.0-py3-none-win_amd64.whl (1.4 MB)
+2025-11-21T22:16:06.5635965Z    ---------------------------------------- 1.4/1.4 MB 17.9 MB/s  0:00:00
+2025-11-21T22:16:06.5682370Z Downloading packaging-25.0-py3-none-any.whl (66 kB)
+2025-11-21T22:16:06.6137597Z Downloading pefile-2023.2.7-py3-none-any.whl (71 kB)
+2025-11-21T22:16:06.6479042Z Downloading pyinstaller_hooks_contrib-2025.9-py3-none-any.whl (444 kB)
+2025-11-21T22:16:06.6903721Z Downloading pywin32_ctypes-0.2.3-py3-none-any.whl (30 kB)
+2025-11-21T22:16:06.7304245Z Downloading altgraph-0.17.5-py2.py3-none-any.whl (21 kB)
+2025-11-21T22:16:06.8662123Z Installing collected packages: altgraph, pywin32-ctypes, pefile, packaging, pyinstaller-hooks-contrib, pyinstaller
+2025-11-21T22:16:11.5227551Z 
+2025-11-21T22:16:11.5270406Z Successfully installed altgraph-0.17.5 packaging-25.0 pefile-2023.2.7 pyinstaller-6.16.0 pyinstaller-hooks-contrib-2025.9 pywin32-ctypes-0.2.3
+2025-11-21T22:16:13.3043316Z ##[group]Run pyinstaller --name "EIC_Installer_Source" --onefile --windowed --icon="logo.ico" --distpath ./dist_pyinstaller gui_app/main.py
+2025-11-21T22:16:13.3044276Z [36;1mpyinstaller --name "EIC_Installer_Source" --onefile --windowed --icon="logo.ico" --distpath ./dist_pyinstaller gui_app/main.py[0m
+2025-11-21T22:16:13.3106442Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-11-21T22:16:13.3106769Z env:
+2025-11-21T22:16:13.3107410Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-11-21T22:16:13.3107862Z ##[endgroup]
+2025-11-21T22:16:13.9431018Z 220 INFO: PyInstaller: 6.16.0, contrib hooks: 2025.9
+2025-11-21T22:16:13.9431612Z 221 INFO: Python: 3.10.11
+2025-11-21T22:16:13.9512764Z 229 INFO: Platform: Windows-10-10.0.26100-SP0
+2025-11-21T22:16:13.9513370Z 229 INFO: Python environment: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-11-21T22:16:13.9519000Z 229 INFO: wrote D:\a\excel-image-compressor\excel-image-compressor\EIC_Installer_Source.spec
+2025-11-21T22:16:13.9550520Z 233 INFO: Module search paths (PYTHONPATH):
+2025-11-21T22:16:13.9551362Z ['C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\Scripts\\pyinstaller.exe',
+2025-11-21T22:16:13.9552300Z  'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\python310.zip',
+2025-11-21T22:16:13.9553012Z  'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\DLLs',
+2025-11-21T22:16:13.9553664Z  'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib',
+2025-11-21T22:16:13.9554337Z  'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64',
+2025-11-21T22:16:13.9555143Z  'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages',
+2025-11-21T22:16:13.9556001Z  'D:\\a\\excel-image-compressor\\excel-image-compressor\\gui_app']
+2025-11-21T22:16:14.1649509Z 441 INFO: checking Analysis
+2025-11-21T22:16:14.1650113Z 441 INFO: Building Analysis because Analysis-00.toc is non existent
+2025-11-21T22:16:14.1650732Z 441 INFO: Looking for Python shared library...
+2025-11-21T22:16:14.1651481Z 441 INFO: Using Python shared library: C:\hostedtoolcache\windows\Python\3.10.11\x64\python310.dll
+2025-11-21T22:16:14.1652586Z 441 INFO: Running Analysis Analysis-00.toc
+2025-11-21T22:16:14.1653042Z 441 INFO: Target bytecode optimization level: 0
+2025-11-21T22:16:14.1653554Z 443 INFO: Initializing module dependency graph...
+2025-11-21T22:16:14.1809878Z 457 INFO: Initializing module graph hook caches...
+2025-11-21T22:16:14.1986733Z 476 INFO: Analyzing modules for base_library.zip ...
+2025-11-21T22:16:14.8205010Z 1097 INFO: Processing standard module hook 'hook-heapq.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
+2025-11-21T22:16:15.2703283Z 1546 INFO: Processing standard module hook 'hook-encodings.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
+2025-11-21T22:16:16.8191975Z 3096 INFO: Processing standard module hook 'hook-pickle.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
+2025-11-21T22:16:18.6753313Z 4952 INFO: Caching module dependency graph...
+2025-11-21T22:16:18.7251062Z 5001 INFO: Analyzing D:\a\excel-image-compressor\excel-image-compressor\gui_app\main.py
+2025-11-21T22:16:18.7301558Z 5007 INFO: Processing pre-find-module-path hook 'hook-tkinter.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks\\pre_find_module_path'
+2025-11-21T22:16:18.7304691Z 5007 INFO: TclTkInfo: initializing cached Tcl/Tk info...
+2025-11-21T22:16:20.7334115Z 7010 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
+2025-11-21T22:16:20.8108502Z 7088 INFO: Processing standard module hook 'hook-platform.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
+2025-11-21T22:16:20.8142022Z 7092 INFO: Processing module hooks (post-graph stage)...
+2025-11-21T22:16:20.8189282Z 7096 INFO: Processing standard module hook 'hook-_tkinter.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks'
+2025-11-21T22:16:20.8304877Z 7107 INFO: Performing binary vs. data reclassification (923 entries)
+2025-11-21T22:16:23.2293105Z 9507 INFO: Looking for ctypes DLLs
+2025-11-21T22:16:23.2315755Z 9509 INFO: Analyzing run-time hooks ...
+2025-11-21T22:16:23.2326175Z 9509 INFO: Including run-time hook 'pyi_rth_inspect.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+2025-11-21T22:16:23.2346165Z 9511 INFO: Including run-time hook 'pyi_rth__tkinter.py' from 'C:\\hostedtoolcache\\windows\\Python\\3.10.11\\x64\\lib\\site-packages\\PyInstaller\\hooks\\rthooks'
+2025-11-21T22:16:23.2647281Z 9542 INFO: Creating base_library.zip...
+2025-11-21T22:16:23.2831289Z 9560 INFO: Looking for dynamic libraries
+2025-11-21T22:16:23.3848010Z 9662 INFO: Extra DLL search directories (AddDllDirectory): []
+2025-11-21T22:16:23.3848401Z 9662 INFO: Extra DLL search directories (PATH): []
+2025-11-21T22:16:24.5679098Z 10845 INFO: Warnings written to D:\a\excel-image-compressor\excel-image-compressor\build\EIC_Installer_Source\warn-EIC_Installer_Source.txt
+2025-11-21T22:16:24.5915660Z 10868 INFO: Graph cross-reference written to D:\a\excel-image-compressor\excel-image-compressor\build\EIC_Installer_Source\xref-EIC_Installer_Source.html
+2025-11-21T22:16:24.6295736Z 10906 INFO: checking PYZ
+2025-11-21T22:16:24.6296312Z 10906 INFO: Building PYZ because PYZ-00.toc is non existent
+2025-11-21T22:16:24.6297625Z 10906 INFO: Building PYZ (ZlibArchive) D:\a\excel-image-compressor\excel-image-compressor\build\EIC_Installer_Source\PYZ-00.pyz
+2025-11-21T22:16:24.7465088Z 11022 INFO: Building PYZ (ZlibArchive) D:\a\excel-image-compressor\excel-image-compressor\build\EIC_Installer_Source\PYZ-00.pyz completed successfully.
+2025-11-21T22:16:24.7874793Z 11064 INFO: checking PKG
+2025-11-21T22:16:24.7875514Z 11064 INFO: Building PKG because PKG-00.toc is non existent
+2025-11-21T22:16:24.7876548Z 11064 INFO: Building PKG (CArchive) EIC_Installer_Source.pkg
+2025-11-21T22:16:31.3928613Z 17669 INFO: Building PKG (CArchive) EIC_Installer_Source.pkg completed successfully.
+2025-11-21T22:16:31.4148257Z 17691 INFO: Bootloader C:\hostedtoolcache\windows\Python\3.10.11\x64\lib\site-packages\PyInstaller\bootloader\Windows-64bit-intel\runw.exe
+2025-11-21T22:16:31.4149274Z 17691 INFO: checking EXE
+2025-11-21T22:16:31.4149719Z 17691 INFO: Building EXE because EXE-00.toc is non existent
+2025-11-21T22:16:31.4150231Z 17691 INFO: Building EXE from EXE-00.toc
+2025-11-21T22:16:31.4152361Z 17691 INFO: Copying bootloader EXE to D:\a\excel-image-compressor\excel-image-compressor\dist_pyinstaller\EIC_Installer_Source.exe
+2025-11-21T22:16:31.4175073Z 17695 INFO: Copying icon to EXE
+2025-11-21T22:16:31.4192137Z 17695 INFO: Copying 0 resources to EXE
+2025-11-21T22:16:31.4192552Z 17695 INFO: Embedding manifest in EXE
+2025-11-21T22:16:31.4209127Z 17697 INFO: Appending PKG archive to EXE
+2025-11-21T22:16:31.4264878Z 17703 INFO: Fixing EXE headers
+2025-11-21T22:16:31.5248135Z 17802 INFO: Building EXE from EXE-00.toc completed successfully.
+2025-11-21T22:16:31.5473447Z 17824 INFO: Build complete! The results are available in: D:\a\excel-image-compressor\excel-image-compressor\dist_pyinstaller
+2025-11-21T22:16:31.7045479Z ##[group]Run Copy-Item -Path .\appxmanifest.xml -Destination .\dist_pyinstaller\appxmanifest.xml
+2025-11-21T22:16:31.7046181Z [36;1mCopy-Item -Path .\appxmanifest.xml -Destination .\dist_pyinstaller\appxmanifest.xml[0m
+2025-11-21T22:16:31.7046711Z [36;1mCopy-Item -Path .\msix_assets -Destination .\dist_pyinstaller -Recurse[0m
+2025-11-21T22:16:31.7105962Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-11-21T22:16:31.7106269Z env:
+2025-11-21T22:16:31.7106513Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-11-21T22:16:31.7106822Z ##[endgroup]
+2025-11-21T22:16:32.1580274Z ##[group]Run microsoft/setup-msbuild@v1.1
+2025-11-21T22:16:32.1580736Z with:
+2025-11-21T22:16:32.1581006Z   msbuild-architecture: x64
+2025-11-21T22:16:32.1581289Z env:
+2025-11-21T22:16:32.1581605Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-11-21T22:16:32.1582035Z ##[endgroup]
+2025-11-21T22:16:32.3209490Z [command]C:\ProgramData\Chocolatey\bin\vswhere.exe -products * -requires Microsoft.Component.MSBuild -property installationPath -latest
+2025-11-21T22:16:33.2880795Z C:\Program Files\Microsoft Visual Studio\2022\Enterprise
+2025-11-21T22:16:33.3570746Z ##[group]Run $sdk_bin_root = "C:\Program Files (x86)\Windows Kits\10\bin"
+2025-11-21T22:16:33.3571274Z [36;1m$sdk_bin_root = "C:\Program Files (x86)\Windows Kits\10\bin"[0m
+2025-11-21T22:16:33.3572004Z [36;1m$latest_sdk_version_dir = Get-ChildItem -Path $sdk_bin_root -Directory | Where-Object { $_.Name -match '^\d+\.\d+\.\d+\.\d+$' } | Sort-Object {[version]$_.Name} -Descending | Select-Object -First 1[0m
+2025-11-21T22:16:33.3572678Z [36;1mif (-not $latest_sdk_version_dir) {[0m
+2025-11-21T22:16:33.3573075Z [36;1m    Write-Error "Could not find a Windows 10 SDK version directory in $sdk_bin_root"[0m
+2025-11-21T22:16:33.3573418Z [36;1m    exit 1[0m
+2025-11-21T22:16:33.3573587Z [36;1m}[0m
+2025-11-21T22:16:33.3573988Z [36;1mecho "sdk_version_dir=$($latest_sdk_version_dir.FullName)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append[0m
+2025-11-21T22:16:33.3574581Z [36;1m$makeappx_path = Join-Path $latest_sdk_version_dir.FullName "x64\makeappx.exe"[0m
+2025-11-21T22:16:33.3574995Z [36;1mif (-not (Test-Path $makeappx_path)) {[0m
+2025-11-21T22:16:33.3575352Z [36;1m    Write-Error "makeappx.exe not found at expected path: $makeappx_path"[0m
+2025-11-21T22:16:33.3575728Z [36;1m    exit 1[0m
+2025-11-21T22:16:33.3575885Z [36;1m}[0m
+2025-11-21T22:16:33.3576104Z [36;1mWrite-Host "Found makeappx.exe at: $makeappx_path"[0m
+2025-11-21T22:16:33.3576566Z [36;1mecho "makeappx_path=$makeappx_path" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append[0m
+2025-11-21T22:16:33.3636914Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-11-21T22:16:33.3637387Z env:
+2025-11-21T22:16:33.3637641Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-11-21T22:16:33.3637953Z ##[endgroup]
+2025-11-21T22:16:34.5872576Z Found makeappx.exe at: C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\makeappx.exe
+2025-11-21T22:16:34.6593052Z ##[group]Run & $env:makeappx_path pack /d .\dist\EIC_Installer_Source /p .\EIC.msix
+2025-11-21T22:16:34.6593647Z [36;1m& $env:makeappx_path pack /d .\dist\EIC_Installer_Source /p .\EIC.msix[0m
+2025-11-21T22:16:34.6654117Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-11-21T22:16:34.6654429Z env:
+2025-11-21T22:16:34.6654676Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.10.11\x64
+2025-11-21T22:16:34.6655068Z   sdk_version_dir: C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0
+2025-11-21T22:16:34.6655504Z   makeappx_path: C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\makeappx.exe
+2025-11-21T22:16:34.6655865Z ##[endgroup]
+2025-11-21T22:16:35.1961167Z Microsoft (R) MakeAppx Tool
+2025-11-21T22:16:35.1961479Z 
+2025-11-21T22:16:35.1961668Z Copyright (C) 2013 Microsoft.  All rights reserved.
+2025-11-21T22:16:35.1961996Z 
+2025-11-21T22:16:35.1962002Z 
+2025-11-21T22:16:35.1962007Z 
+2025-11-21T22:16:35.1962650Z The path (/p) parameter is: "\\?\D:\a\excel-image-compressor\excel-image-compressor\EIC.msix"
+2025-11-21T22:16:35.1963159Z 
+2025-11-21T22:16:35.1963691Z The content directory (/d) parameter is: "\\?\D:\a\excel-image-compressor\excel-image-compressor\dist\EIC_Installer_Source"
+2025-11-21T22:16:35.1964367Z 
+2025-11-21T22:16:35.1965346Z Enumerating files from directory "\\?\D:\a\excel-image-compressor\excel-image-compressor\dist\EIC_Installer_Source"
+2025-11-21T22:16:35.1966225Z 
+2025-11-21T22:16:35.1967001Z MakeAppx : error: For file "\\?\D:\a\excel-image-compressor\excel-image-compressor\dist\EIC_Installer_Source" - 0x80070003 - The system cannot find the path specified.
+2025-11-21T22:16:35.1967682Z 
+2025-11-21T22:16:35.1967791Z MakeAppx : error: Package creation failed.
+2025-11-21T22:16:35.1967991Z 
+2025-11-21T22:16:35.1968176Z MakeAppx : error: 0x80070003 - The system cannot find the path specified.
+2025-11-21T22:16:35.1968449Z 
+2025-11-21T22:16:35.3212670Z ##[error]Process completed with exit code 1.
+2025-11-21T22:16:35.3422881Z Post job cleanup.
+2025-11-21T22:16:35.5507961Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-11-21T22:16:35.5792849Z git version 2.51.2.windows.1
+2025-11-21T22:16:35.5892883Z Temporarily overriding HOME='D:\a\_temp\0d726b46-01f5-4035-860e-3f077837570c' before making global git config changes
+2025-11-21T22:16:35.5894032Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-21T22:16:35.5901858Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\excel-image-compressor\excel-image-compressor
+2025-11-21T22:16:35.6294072Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-11-21T22:16:35.6587898Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-11-21T22:16:36.2154240Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-21T22:16:36.2412153Z http.https://github.com/.extraheader
+2025-11-21T22:16:36.2456816Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2025-11-21T22:16:36.2770588Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-11-21T22:16:36.8065696Z Cleaning up orphan processes

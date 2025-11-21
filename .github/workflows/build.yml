@@ -37,8 +37,9 @@ jobs:
       with:
         msbuild-architecture: x64
 
-    - name: Find makeappx.exe
-      id: find_makeappx
+    - name: Find latest Windows 10 SDK
+      id: find_sdk
+      shell: pwsh
       run: |
         $sdk_bin_root = "C:\Program Files (x86)\Windows Kits\10\bin"
         $latest_sdk_version_dir = Get-ChildItem -Path $sdk_bin_root -Directory | Where-Object { $_.Name -match '^\d+\.\d+\.\d+\.\d+$' } | Sort-Object {[version]$_.Name} -Descending | Select-Object -First 1
@@ -54,14 +55,13 @@ jobs:
         }
         Write-Host "Found makeappx.exe at: $makeappx_path"
         echo "makeappx_path=$makeappx_path" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-      shell: pwsh
-    
+
     - name: Create MSIX package
-      run: |
-        & $env:makeappx_path pack /d .\dist\EIC_Installer_Source /p .\EIC.msix
       shell: pwsh
-    
-    - name: Upload MSIX package as artifact
+      run: |
+        & $env:makeappx_path pack /d .\dist_pyinstaller /p .\EIC.msix
+
+    - name: Upload MSIX package artifact
       uses: actions/upload-artifact@v4
       with:
         name: msix-package
@@ -79,4 +79,4 @@ jobs:
 
 
 
-
+
