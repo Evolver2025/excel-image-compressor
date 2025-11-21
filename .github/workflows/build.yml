@@ -47,8 +47,9 @@ jobs:
       run: |
         .\MsixPackagingTool\MsixPackagingTool.exe create-package --template .\installer_script.iss --package .\EIC.msix --output-path .\
 
-    - name: Upload MSIX package
-      uses: actions/upload-artifact@v3
+    - name: Upload MSIX Package
+      uses: actions/upload-artifact@v4
       with:
         name: msix-package
         path: .\EIC.msix
+
