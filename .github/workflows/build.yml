@@ -24,7 +24,13 @@ jobs:
 
     - name: Run PyInstaller
       run: |
-        pyinstaller --name "EIC_Installer_Source" --onefile --windowed --icon="logo.ico" --distpath ./dist_pyinstaller
+        pyinstaller --name "EIC_Installer_Source" --onefile --windowed --icon="logo.ico" --distpath ./dist_pyinstaller gui_app/main.py
+
+    - name: Prepare files for MSIX package
+      shell: pwsh
+      run: |
+        Copy-Item -Path .\appxmanifest.xml -Destination .\dist_pyinstaller\appxmanifest.xml
+        Copy-Item -Path .\msix_assets -Destination .\dist_pyinstaller -Recurse
 
     - name: Create MSIX Package
       shell: pwsh
@@ -37,4 +43,5 @@ jobs:
       with:
         name: msix-package
         path: .\EIC.msix
+
 
