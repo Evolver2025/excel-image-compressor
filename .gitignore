@@ -1,0 +1,23 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# PyInstaller
+build/
+dist/
+EIC_Installer_Source.spec
+
+# Inno Setup
+installer_output/
+
+# IDE / OS
+.idea/
+.vscode/
+*.DS_Store
+
+# Documentation
+微软应用商店上架.md
+
+# temp file
+c.py
