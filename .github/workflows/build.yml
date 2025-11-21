@@ -37,66 +37,66 @@ jobs:
       with:
         msbuild-architecture: x64
 
-     - name: Find makeappx.exe
-       id: find_makeappx
-       run: |
-         $sdk_bin_root = "C:\Program Files (x86)\Windows Kits\10\bin"
-         $latest_sdk_version_dir = Get-ChildItem -Path $sdk_bin_root -Directory | Where-Object { $_.Name -match '^\d+\.\d+\.\d+\.\d+$' } | Sort-Object {[version]$_.Name} -Descending | Select-Object -First 1
-         if (-not $latest_sdk_version_dir) {
-             Write-Error "Could not find a Windows 10 SDK version directory in $sdk_bin_root"
-             exit 1
-         }
-         echo "sdk_version_dir=$($latest_sdk_version_dir.FullName)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-         $makeappx_path = Join-Path $latest_sdk_version_dir.FullName "x64\makeappx.exe"
-         if (-not (Test-Path $makeappx_path)) {
-             Write-Error "makeappx.exe not found at expected path: $makeappx_path"
-             exit 1
-         }
-         Write-Host "Found makeappx.exe at: $makeappx_path"
-         echo "makeappx_path=$makeappx_path" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-       shell: pwsh
+    - name: Find makeappx.exe
+      id: find_makeappx
+      run: |
+        $sdk_bin_root = "C:\Program Files (x86)\Windows Kits\10\bin"
+        $latest_sdk_version_dir = Get-ChildItem -Path $sdk_bin_root -Directory | Where-Object { $_.Name -match '^\d+\.\d+\.\d+\.\d+$' } | Sort-Object {[version]$_.Name} -Descending | Select-Object -First 1
+        if (-not $latest_sdk_version_dir) {
+            Write-Error "Could not find a Windows 10 SDK version directory in $sdk_bin_root"
+            exit 1
+        }
+        echo "sdk_version_dir=$($latest_sdk_version_dir.FullName)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        $makeappx_path = Join-Path $latest_sdk_version_dir.FullName "x64\makeappx.exe"
+        if (-not (Test-Path $makeappx_path)) {
+            Write-Error "makeappx.exe not found at expected path: $makeappx_path"
+            exit 1
+        }
+        Write-Host "Found makeappx.exe at: $makeappx_path"
+        echo "makeappx_path=$makeappx_path" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+      shell: pwsh
     
-     - name: Create MSIX Package
-       run: |
-         & $env:makeappx_path pack /d .\dist_pyinstaller /p .\EIC.msix
+    - name: Create MSIX Package
+      run: |
+        & $env:makeappx_path pack /d .\dist_pyinstaller /p .\EIC.msix
 
-     - name: Create self-signed certificate (Code Signing)
-       shell: pwsh
-       run: |
-         $subject = "CN=Evolver2025"
-         $cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject $subject -CertStoreLocation Cert:\CurrentUser\My -NotAfter (Get-Date).AddYears(1)
-         $pwd = ConvertTo-SecureString "msix-sign-pass" -AsPlainText -Force
-         Export-PfxCertificate -Cert $cert -FilePath .\signing.pfx -Password $pwd
-         Export-Certificate -Cert $cert -FilePath .\signing.cer
+    - name: Create self-signed certificate (Code Signing)
+      shell: pwsh
+      run: |
+        $subject = "CN=Evolver2025"
+        $cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject $subject -CertStoreLocation Cert:\CurrentUser\My -NotAfter (Get-Date).AddYears(1)
+        $pwd = ConvertTo-SecureString "msix-sign-pass" -AsPlainText -Force
+        Export-PfxCertificate -Cert $cert -FilePath .\signing.pfx -Password $pwd
+        Export-Certificate -Cert $cert -FilePath .\signing.cer
 
-     - name: Find signtool.exe
-       id: find_signtool
-       shell: pwsh
-       run: |
-         $signtool_path = Join-Path $env:sdk_version_dir "x64\signtool.exe"
-         if (-not (Test-Path $signtool_path)) {
-           Write-Error "signtool.exe not found at: $signtool_path"
-           exit 1
-         }
-         Write-Host "Found signtool.exe at: $signtool_path"
-         echo "signtool_path=$signtool_path" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+    - name: Find signtool.exe
+      id: find_signtool
+      shell: pwsh
+      run: |
+        $signtool_path = Join-Path $env:sdk_version_dir "x64\signtool.exe"
+        if (-not (Test-Path $signtool_path)) {
+          Write-Error "signtool.exe not found at: $signtool_path"
+          exit 1
+        }
+        Write-Host "Found signtool.exe at: $signtool_path"
+        echo "signtool_path=$signtool_path" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
-     - name: Sign MSIX package
-       shell: pwsh
-       run: |
-         & $env:signtool_path sign /fd SHA256 /f .\signing.pfx /p "msix-sign-pass" /tr http://timestamp.digicert.com /td SHA256 .\EIC.msix
+    - name: Sign MSIX package
+      shell: pwsh
+      run: |
+        & $env:signtool_path sign /fd SHA256 /f .\signing.pfx /p "msix-sign-pass" /tr http://timestamp.digicert.com /td SHA256 .\EIC.msix
 
-     - name: Upload MSIX Package
-       uses: actions/upload-artifact@v4
-       with:
-         name: msix-package
-         path: .\EIC.msix
+    - name: Upload MSIX Package
+      uses: actions/upload-artifact@v4
+      with:
+        name: msix-package
+        path: .\EIC.msix
 
-     - name: Upload signing certificate (CER)
-       uses: actions/upload-artifact@v4
-       with:
-         name: msix-signing-certificate
-         path: .\signing.cer
+    - name: Upload signing certificate (CER)
+      uses: actions/upload-artifact@v4
+      with:
+        name: msix-signing-certificate
+        path: .\signing.cer
 
 
 
