@@ -38,12 +38,12 @@ jobs:
       run: |
         & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "installer_script.iss"
 
-    - name: Download MSIX Packaging Tool
+    - name: Download and Extract MSIX Packaging Tool
       run: |
         curl -L -o MsixPackagingTool.zip "https://aka.ms/msix-packaging-tool-latest-version"
-        Expand-Archive -Path MsixPackagingTool.zip -DestinationPath .\MsixPackagingTool
+        7z x MsixPackagingTool.zip -oMsixPackagingTool
 
-    - name: Create MSIX package
+    - name: Create MSIX Package
       run: |
         .\MsixPackagingTool\MsixPackagingTool.exe create-package --template .\installer_script.iss --package .\EIC.msix --output-path .\
 
