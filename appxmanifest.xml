@@ -9,7 +9,7 @@
     Version="1.0.0.0"
     ProcessorArchitecture="x64" />
   <Properties>
-    <DisplayName>Excel Image Compressor</DisplayName>
+    <DisplayName>Excel Image Compression</DisplayName>
     <PublisherDisplayName>Evolver0416</PublisherDisplayName>
     <Logo>msix_assets\StoreLogo.png</Logo>
   </Properties>
@@ -24,7 +24,7 @@
       Executable="EIC_Installer_Source.exe"
       EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements
-        DisplayName="Excel Image Compressor"
+        DisplayName="Excel Image Compression"
         Description="Compress images in Excel files"
         Square150x150Logo="msix_assets\MediumTile.png"
         Square44x44Logo="msix_assets\Square44x44Logo.png"
