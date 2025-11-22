@@ -4,8 +4,8 @@
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
   xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
   <Identity
-    Name="Evolver0416.ExcelImageCompressor"
-    Publisher="CN=d1c61282-c12a-49ae-bc67-ef84b2868f07"
+    Name="Evolver0416.ExcelImageCompression"
+    Publisher="CN=F9069E51-9D70-4D67-8913-EA558644A74A"
     Version="1.0.0.0"
     ProcessorArchitecture="x64" />
   <Properties>
