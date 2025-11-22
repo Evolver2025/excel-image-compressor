@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity
+    Name="Evolver0416.ExcelImageCompressor"
+    Publisher="CN=d1c61282-c12a-49ae-bc67-ef84b2868f07"
+    Version="1.0.0.0"
+    ProcessorArchitecture="x64" />
+  <Properties>
+    <DisplayName>Excel Image Compressor</DisplayName>
+    <PublisherDisplayName>Evolver0416</PublisherDisplayName>
+    <Logo>msix_assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.22000.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="App"
+      Executable="EIC_Installer_Source.exe"
+      EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="Excel Image Compressor"
+        Description="Compress images in Excel files"
+        Square150x150Logo="msix_assets\MediumTile.png"
+        Square44x44Logo="msix_assets\Square44x44Logo.png"
+        BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="msix_assets\LargeTile.png" />
+        <uap:SplashScreen Image="msix_assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>

@@ -21,3 +21,5 @@ installer_output/
 
 # temp file
 c.py
+
+# Trigger GitHub Actions build
