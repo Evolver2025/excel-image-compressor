@@ -63,10 +63,28 @@ jobs:
         Write-Host "Found makeappx.exe at: $makeappx_path"
         echo "makeappx_path=$makeappx_path" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
-    - name: Create MSIX package
+    - name: Create and sign MSIX package
       shell: pwsh
       run: |
-        & $env:makeappx_path pack /d .\dist_pyinstaller /p .\EIC.msix
+        $makeappx_path = $env:makeappx_path
+        $sdk_version_dir = $env:sdk_version_dir
+        $cert_path = ".\signing.pfx"
+        $cert_cer_path = ".\signing.cer"
+        $password = "password"
+        $publisher = "CN=Evolver2025"
+
+        # Create certificate
+        $cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject $publisher -CertStoreLocation "Cert:\CurrentUser\My" -KeyExportPolicy Exportable -NotAfter (Get-Date).AddYears(1)
+        $password_secure = ConvertTo-SecureString -String $password -Force -AsPlainText
+        Export-PfxCertificate -Cert $cert -FilePath $cert_path -Password $password_secure
+        Export-Certificate -Cert $cert -FilePath $cert_cer_path
+
+        # Create MSIX package
+        & $makeappx_path pack /d .\dist_pyinstaller /p .\EIC.msix
+
+        # Sign the MSIX package
+        $signtool_path = Join-Path $sdk_version_dir "x64\signtool.exe"
+        & $signtool_path sign /fd SHA256 /a /f $cert_path /p $password .\EIC.msix
 
     - name: Upload MSIX package artifact
       uses: actions/upload-artifact@v4
@@ -74,11 +92,6 @@ jobs:
         name: msix-package
         path: EIC.msix
 
-    - name: Upload signing certificate (CER)
-      uses: actions/upload-artifact@v4
-      with:
-        name: msix-signing-certificate
-        path: .\signing.cer
 
 
 
@@ -86,4 +99,5 @@ jobs:
 
 
 
-
+
+
